@@ -91,39 +91,39 @@ new class extends Component {
         </div>
         <div class="grid gap-5 sm:grid-cols-2">
             <div>
-                <label for="name" class="mb-1.5 block text-sm font-semibold text-[#112138]">Name</label>
+                <label for="name" class="mb-1.5 block text-sm font-semibold text-[#112138]">{{ __('Name') }}</label>
                 <input id="name" wire:model="name" type="text" required
                        class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
                        placeholder="Jane Doe">
                 @error('name') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div>
-                <label for="company" class="mb-1.5 block text-sm font-semibold text-[#112138]">Company</label>
+                <label for="company" class="mb-1.5 block text-sm font-semibold text-[#112138]">{{ __('Company') }}</label>
                 <input id="company" wire:model="company" type="text"
                        class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
                        placeholder="Acme GmbH">
             </div>
         </div>
         <div>
-            <label for="email" class="mb-1.5 block text-sm font-semibold text-[#112138]">Work email</label>
+            <label for="email" class="mb-1.5 block text-sm font-semibold text-[#112138]">{{ __('Work email') }}</label>
             <input id="email" wire:model="email" type="email" required
                    class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
                    placeholder="jane@company.com">
             @error('email') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
         </div>
         <div>
-            <label for="message" class="mb-1.5 block text-sm font-semibold text-[#112138]">How can we help?</label>
+            <label for="message" class="mb-1.5 block text-sm font-semibold text-[#112138]">{{ __('How can we help?') }}</label>
             <textarea id="message" wire:model="message" rows="4" required
                       class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
-                      placeholder="Tell us about your project, timeline and goals…"></textarea>
+                      placeholder="{{ __('Tell us about your project, timeline and goals…') }}"></textarea>
             @error('message') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
         </div>
         <button type="submit" wire:loading.attr="disabled" wire:target="submit"
                 class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#6304ec] px-7 py-3.5 text-base font-bold text-white shadow-xl shadow-[#6304ec]/25 transition hover:-translate-y-0.5 hover:bg-[#5505c8] disabled:cursor-not-allowed disabled:opacity-70">
-            <span wire:loading.remove wire:target="submit">Send message</span>
-            <span wire:loading wire:target="submit">Sending…</span>
+            <span wire:loading.remove wire:target="submit">{{ __('Send message') }}</span>
+            <span wire:loading wire:target="submit">{{ __('Sending…') }}</span>
             <svg class="h-4 w-4 transition group-hover:translate-x-0.5" wire:loading.remove wire:target="submit" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <p class="text-xs text-[#112138]/45">By submitting, you agree to our processing of your data in line with GDPR. We never share your details.</p>
+        <p class="text-xs text-[#112138]/45">{{ __('By submitting, you agree to our processing of your data in line with GDPR. We never share your details.') }}</p>
     </form>
 </div>

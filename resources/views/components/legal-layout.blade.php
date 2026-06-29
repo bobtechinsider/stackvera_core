@@ -35,11 +35,14 @@
             <a href="{{ route('home') }}" class="flex items-center" aria-label="StackVera Core — home">
                 <img src="/images/stackvera-logo.svg" alt="StackVera Core" class="h-9 w-auto">
             </a>
-            <a href="{{ route('home') }}"
-               class="inline-flex items-center gap-2 text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">
-                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 10H4m0 0 5 5m-5-5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Back to home
-            </a>
+            <div class="flex items-center gap-4">
+                <x-language-switcher />
+                <a href="{{ route('home') }}"
+                   class="inline-flex items-center gap-2 text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 10H4m0 0 5 5m-5-5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    {{ __('legal.layout.back_to_home') }}
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -51,7 +54,7 @@
         </div>
 
         <div class="mx-auto max-w-3xl px-6 lg:px-8">
-            <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">Legal</span>
+            <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">{{ __('legal.layout.eyebrow') }}</span>
             <h1 class="mt-4 font-display text-4xl font-black tracking-tight text-[#112138] sm:text-5xl">{{ $title }}</h1>
 
             <div class="prose-legal mt-12 space-y-8 text-[#112138]/75">
@@ -63,10 +66,10 @@
     {{-- ============================ FOOTER ============================ --}}
     <footer class="border-t border-zinc-200 bg-white py-10">
         <div class="mx-auto flex max-w-4xl flex-col items-start justify-between gap-4 px-6 text-xs text-[#112138]/45 sm:flex-row sm:items-center lg:px-8">
-            <p>© {{ date('Y') }} StackVera Core GmbH. All rights reserved.</p>
+            <p>© {{ date('Y') }} {{ __('landing.footer.rights') }}</p>
             <div class="flex gap-6">
-                <a href="{{ route('legal.imprint') }}" class="hover:text-[#6304ec]">Imprint</a>
-                <a href="{{ route('legal.privacy') }}" class="hover:text-[#6304ec]">Privacy Policy</a>
+                <a href="{{ route('legal.imprint') }}" class="hover:text-[#6304ec]">{{ __('landing.footer.imprint') }}</a>
+                <a href="{{ route('legal.privacy') }}" class="hover:text-[#6304ec]">{{ __('landing.footer.privacy') }}</a>
             </div>
         </div>
     </footer>

@@ -1,11 +1,11 @@
 <x-legal-layout
-    title="Imprint"
-    description="Imprint and legal information for StackVera Core GmbH."
+    :title="__('legal.imprint.title')"
+    :description="__('legal.imprint.meta_description')"
 >
-    <p class="text-sm text-[#112138]/45">Information pursuant to § 5 DDG (German Digital Services Act).</p>
+    <p class="text-sm text-[#112138]/45">{{ __('legal.imprint.intro') }}</p>
 
     <section>
-        <h2>Company details</h2>
+        <h2>{{ __('legal.imprint.company_heading') }}</h2>
         <p>
             StackVera Core GmbH<br>
             <span class="placeholder">[Street and house number]</span><br>
@@ -15,42 +15,42 @@
     </section>
 
     <section>
-        <h2>Represented by</h2>
+        <h2>{{ __('legal.imprint.represented_heading') }}</h2>
         <p>
-            Managing Director: <span class="placeholder">[Name of managing director]</span>
+            {{ __('legal.imprint.managing_director') }} <span class="placeholder">[Name of managing director]</span>
         </p>
     </section>
 
     <section>
-        <h2>Contact</h2>
+        <h2>{{ __('legal.imprint.contact_heading') }}</h2>
         <p>
-            Phone: <span class="placeholder">[Phone number]</span><br>
-            Email: <a href="mailto:hello@stackvera.io">hello@stackvera.io</a>
+            {{ __('legal.imprint.phone') }} <span class="placeholder">[Phone number]</span><br>
+            {{ __('legal.imprint.email') }} <a href="mailto:hello@stackvera.io">hello@stackvera.io</a>
         </p>
     </section>
 
     <section>
-        <h2>Register entry</h2>
+        <h2>{{ __('legal.imprint.register_heading') }}</h2>
         <p>
-            Entry in the commercial register.<br>
-            Register court: <span class="placeholder">[Register court]</span><br>
-            Register number: <span class="placeholder">[HRB number]</span>
+            {{ __('legal.imprint.register_intro') }}<br>
+            {{ __('legal.imprint.register_court') }} <span class="placeholder">[Register court]</span><br>
+            {{ __('legal.imprint.register_number') }} <span class="placeholder">[HRB number]</span>
         </p>
     </section>
 
     <section>
-        <h2>VAT identification number</h2>
+        <h2>{{ __('legal.imprint.vat_heading') }}</h2>
         <p>
-            VAT ID pursuant to § 27a of the German VAT Act (UStG):<br>
+            {{ __('legal.imprint.vat_intro') }}<br>
             <span class="placeholder">[VAT ID, e.g. DE000000000]</span>
         </p>
     </section>
 
     <section>
-        <h2>Responsible for content</h2>
+        <h2>{{ __('legal.imprint.responsible_heading') }}</h2>
         <p>
-            Pursuant to § 18 (2) MStV:<br>
-            <span class="placeholder">[Name]</span>, <span class="placeholder">[Address as above]</span>
+            {{ __('legal.imprint.responsible_intro') }}<br>
+            <span class="placeholder">[Name]</span>, <span class="placeholder">[{{ __('legal.imprint.responsible_address') }}]</span>
         </p>
     </section>
 

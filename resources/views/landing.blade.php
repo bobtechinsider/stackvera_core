@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>StackVera Core GmbH - IT Consulting for Cloud, AI &amp; Security</title>
-    <meta name="description" content="StackVera Core GmbH is a European IT consultancy delivering cloud &amp; DevOps, AI &amp; data, cybersecurity and EU-trusted platforms for ambitious organisations.">
+    <title>{{ __('landing.meta.title') }}</title>
+    <meta name="description" content="{{ __('landing.meta.description') }}">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,18 +34,19 @@
             </a>
 
             <div class="hidden items-center gap-9 lg:flex">
-                <a href="#services" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">Services</a>
-                <a href="#approach" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">Approach</a>
-                <a href="#why" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">Why us</a>
-                <a href="#contact" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">Contact</a>
+                <a href="#services" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">{{ __('landing.nav.services') }}</a>
+                <a href="#approach" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">{{ __('landing.nav.approach') }}</a>
+                <a href="#why" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">{{ __('landing.nav.why_us') }}</a>
+                <a href="#contact" class="text-sm font-semibold text-[#112138]/70 transition hover:text-[#6304ec]">{{ __('landing.nav.contact') }}</a>
             </div>
 
             <div class="hidden items-center gap-3 lg:flex">
+                <x-language-switcher />
                 <a href="https://calendar.app.google/vGVv6Sh6EPv8do3M8" target="_blank" rel="noopener"
-                   class="text-sm font-semibold text-[#112138] transition hover:text-[#6304ec]">Book a call</a>
+                   class="text-sm font-semibold text-[#112138] transition hover:text-[#6304ec]">{{ __('landing.nav.book_call') }}</a>
                 <a href="#contact"
                    class="group inline-flex items-center gap-2 rounded-full bg-[#6304ec] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#6304ec]/25 transition hover:-translate-y-0.5 hover:bg-[#5505c8] hover:shadow-xl hover:shadow-[#6304ec]/30">
-                    Start a project
+                    {{ __('landing.nav.start_project') }}
                     <svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </div>
@@ -59,11 +60,12 @@
         {{-- Mobile menu --}}
         <div x-show="open" x-cloak x-transition class="border-t border-zinc-200 bg-white px-6 py-6 lg:hidden">
             <div class="flex flex-col gap-4">
-                <a @click="open=false" href="#services" class="text-base font-semibold">Services</a>
-                <a @click="open=false" href="#approach" class="text-base font-semibold">Approach</a>
-                <a @click="open=false" href="#why" class="text-base font-semibold">Why us</a>
-                <a @click="open=false" href="#contact" class="text-base font-semibold">Contact</a>
-                <a @click="open=false" href="#contact" class="mt-2 inline-flex items-center justify-center rounded-full bg-[#6304ec] px-5 py-3 text-sm font-bold text-white">Start a project</a>
+                <a @click="open=false" href="#services" class="text-base font-semibold">{{ __('landing.nav.services') }}</a>
+                <a @click="open=false" href="#approach" class="text-base font-semibold">{{ __('landing.nav.approach') }}</a>
+                <a @click="open=false" href="#why" class="text-base font-semibold">{{ __('landing.nav.why_us') }}</a>
+                <a @click="open=false" href="#contact" class="text-base font-semibold">{{ __('landing.nav.contact') }}</a>
+                <a @click="open=false" href="#contact" class="mt-2 inline-flex items-center justify-center rounded-full bg-[#6304ec] px-5 py-3 text-sm font-bold text-white">{{ __('landing.nav.start_project') }}</a>
+                <x-language-switcher class="mt-2" />
             </div>
         </div>
     </header>
@@ -81,49 +83,42 @@
             <div class="mx-auto max-w-4xl text-center">
                 <span class="inline-flex items-center gap-2 rounded-full border border-[#6304ec]/20 bg-[#6304ec]/5 px-4 py-1.5 text-xs font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">
                     <span class="h-1.5 w-1.5 rounded-full bg-[#00dffe]"></span>
-                    European IT Consultancy
+                    {{ __('landing.hero.badge') }}
                 </span>
 
                 <h1 class="mt-7 font-display text-5xl font-black leading-[1.05] tracking-tight text-[#112138] sm:text-6xl lg:text-7xl">
-                    Engineering the
+                    {{ __('landing.hero.heading_before') }}
                     <span class="relative whitespace-nowrap">
-                        <span class="bg-gradient-to-r from-[#6304ec] via-[#5505c8] to-[#00dffe] bg-clip-text text-transparent">core</span>
+                        <span class="bg-gradient-to-r from-[#6304ec] via-[#5505c8] to-[#00dffe] bg-clip-text text-transparent">{{ __('landing.hero.heading_highlight') }}</span>
                     </span>
-                    of your<br class="hidden sm:block"> digital business.
+                    {{ __('landing.hero.heading_after') }}
                 </h1>
 
                 <p class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-[#112138]/65">
-                    StackVera Core GmbH helps ambitious organisations modernise their stack with
-                    cloud, AI and security expertise. Sovereign, compliant and built to last,
-                    engineered in Europe.
+                    {{ __('landing.hero.description') }}
                 </p>
 
                 <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                     <a href="#contact"
                        class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#6304ec] px-7 py-3.5 text-base font-bold text-white shadow-xl shadow-[#6304ec]/25 transition hover:-translate-y-0.5 hover:bg-[#5505c8] sm:w-auto">
-                        Start a project
+                        {{ __('landing.hero.cta_primary') }}
                         <svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
                     <a href="#services"
                        class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white px-7 py-3.5 text-base font-bold text-[#112138] transition hover:border-[#6304ec]/40 hover:text-[#6304ec] sm:w-auto">
-                        Explore services
+                        {{ __('landing.hero.cta_secondary') }}
                     </a>
                 </div>
 
-                <p class="mt-6 text-sm text-[#112138]/45">Trusted by teams across DACH and the EU · GDPR-first · ISO-aligned</p>
+                <p class="mt-6 text-sm text-[#112138]/45">{{ __('landing.hero.trust_note') }}</p>
             </div>
 
             {{-- Stat band --}}
             <div class="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-200 shadow-sm md:grid-cols-4">
-                @foreach ([
-                    ['12+', 'Years of combined delivery'],
-                    ['99.95%', 'Average platform uptime'],
-                    ['40+', 'Cloud & AI projects shipped'],
-                    ['EU', 'Data residency by default'],
-                ] as [$stat, $label])
+                @foreach (__('landing.stats') as $stat)
                     <div class="bg-white px-6 py-8 text-center">
-                        <div class="font-display text-3xl font-black text-[#6304ec]">{{ $stat }}</div>
-                        <div class="mt-1 text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/50">{{ $label }}</div>
+                        <div class="font-display text-3xl font-black text-[#6304ec]">{{ $stat['value'] }}</div>
+                        <div class="mt-1 text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/50">{{ $stat['label'] }}</div>
                     </div>
                 @endforeach
             </div>
@@ -134,7 +129,7 @@
     <section id="clients" class="border-y border-zinc-200 bg-zinc-50/60 py-16 lg:py-20">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <p class="text-center text-sm font-bold font-body uppercase tracking-[0.18em] text-[#112138]/45">
-                Trusted by teams at leading organisations
+                {{ __('landing.clients.heading') }}
             </p>
         </div>
 
@@ -173,54 +168,29 @@
     <section id="services" class="relative py-24 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="max-w-2xl">
-                <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">What we do</span>
+                <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">{{ __('landing.services.eyebrow') }}</span>
                 <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-[#112138] sm:text-5xl">
-                    Four disciplines, one accountable partner.
+                    {{ __('landing.services.heading') }}
                 </h2>
                 <p class="mt-5 text-lg text-[#112138]/65">
-                    We embed senior engineers alongside your team to design, build and run the
-                    systems that move your business forward.
+                    {{ __('landing.services.description') }}
                 </p>
             </div>
 
             <div class="mt-16 grid gap-6 md:grid-cols-2">
                 @php
-                    $services = [
-                        [
-                            'title' => 'Cloud & DevOps',
-                            'desc' => 'Cloud migration, infrastructure as code, Kubernetes and CI/CD pipelines that ship safely and scale on demand.',
-                            'points' => ['AWS · Azure · Hetzner', 'Terraform & GitOps', 'Observability & SRE'],
-                            'accent' => '#6304ec',
-                        ],
-                        [
-                            'title' => 'AI & Data',
-                            'desc' => 'From data foundations to production AI, we integrate models and analytics that create measurable leverage.',
-                            'points' => ['LLM & RAG integration', 'Data pipelines & warehousing', 'Decision dashboards'],
-                            'accent' => '#5505c8',
-                        ],
-                        [
-                            'title' => 'Cybersecurity',
-                            'desc' => 'Threat detection, incident response and zero-trust architecture that keep your systems resilient and your customers confident.',
-                            'points' => ['Threat detection & response', 'Incident response & recovery', 'Zero-trust architecture'],
-                            'accent' => '#00b8d4',
-                        ],
-                        [
-                            'title' => 'EU-Trusted Platforms',
-                            'desc' => 'Sovereign, compliant platforms with European data residency, built for organisations that cannot compromise on trust.',
-                            'points' => ['EU data residency', 'Sovereign cloud', 'Digital compliance (DSA · NIS2)'],
-                            'accent' => '#112138',
-                        ],
-                    ];
+                    $serviceAccents = ['#6304ec', '#5505c8', '#00b8d4', '#112138'];
                 @endphp
 
-                @foreach ($services as $service)
+                @foreach (__('landing.services.items') as $index => $service)
+                    @php $accent = $serviceAccents[$index] ?? '#6304ec'; @endphp
                     <div class="group relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 transition duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-2xl hover:shadow-[#112138]/10 lg:p-10">
                         <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#6304ec] to-[#00dffe] transition-transform duration-300 group-hover:scale-x-100"></div>
-                        <div class="flex h-12 w-12 items-center justify-center rounded-2xl" style="background-color: {{ $service['accent'] }}1a; color: {{ $service['accent'] }}">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-2xl" style="background-color: {{ $accent }}1a; color: {{ $accent }}">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75 12 2.25l8.25 4.5M3.75 6.75 12 11.25l8.25-4.5M3.75 6.75v10.5L12 21.75m8.25-15v10.5L12 21.75m0-10.5v10.5"/></svg>
                         </div>
                         <h3 class="mt-6 font-display text-2xl font-bold text-[#112138]">{{ $service['title'] }}</h3>
-                        <p class="mt-3 text-[#112138]/65">{{ $service['desc'] }}</p>
+                        <p class="mt-3 text-[#112138]/65">{{ $service['description'] }}</p>
                         <ul class="mt-6 space-y-2.5">
                             @foreach ($service['points'] as $point)
                                 <li class="flex items-center gap-3 text-sm font-semibold text-[#112138]/75">
@@ -240,34 +210,25 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                 <div>
-                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#00dffe]">How we work</span>
+                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#00dffe]">{{ __('landing.approach.eyebrow') }}</span>
                     <h2 class="mt-4 font-display text-4xl font-black tracking-tight sm:text-5xl">
-                        A delivery model built on clarity and ownership.
+                        {{ __('landing.approach.heading') }}
                     </h2>
                     <p class="mt-5 text-lg text-white/65">
-                        No black boxes, no endless decks. We move from discovery to production in
-                        focused increments, with senior people accountable at every step.
+                        {{ __('landing.approach.description') }}
                     </p>
                     <a href="#contact" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#112138] transition hover:bg-[#00dffe]">
-                        Book a discovery call
+                        {{ __('landing.approach.cta') }}
                         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
                 </div>
 
                 <div class="grid gap-4 sm:grid-cols-2">
-                    @php
-                        $steps = [
-                            ['01', 'Discover', 'We map your goals, constraints and architecture to define what success looks like.'],
-                            ['02', 'Design', 'A pragmatic technical plan with clear milestones, costs and trade-offs.'],
-                            ['03', 'Build', 'Senior engineers deliver in short cycles with continuous, demonstrable progress.'],
-                            ['04', 'Run', 'We operate, secure and optimise, or hand over a system your team can own.'],
-                        ];
-                    @endphp
-                    @foreach ($steps as [$num, $title, $desc])
+                    @foreach (__('landing.approach.steps') as $step)
                         <div class="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-[#00dffe]/40 hover:bg-white/[0.07]">
-                            <div class="font-display text-2xl font-black text-[#00dffe]">{{ $num }}</div>
-                            <h3 class="mt-3 font-display text-lg font-bold">{{ $title }}</h3>
-                            <p class="mt-2 text-sm leading-relaxed text-white/60">{{ $desc }}</p>
+                            <div class="font-display text-2xl font-black text-[#00dffe]">{{ $step['number'] }}</div>
+                            <h3 class="mt-3 font-display text-lg font-bold">{{ $step['title'] }}</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-white/60">{{ $step['description'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -283,41 +244,32 @@
                     <div class="relative overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-br from-[#6304ec] to-[#5505c8] p-10 text-white shadow-2xl shadow-[#6304ec]/20">
                         <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
                         <div class="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-[#00dffe]/15 blur-3xl"></div>
-                        <h3 class="relative font-display text-2xl font-bold">Sovereignty, by design.</h3>
+                        <h3 class="relative font-display text-2xl font-bold">{{ __('landing.why.card_heading') }}</h3>
                         <p class="mt-4 text-white/80">
-                            Your data stays in the EU, your architecture stays auditable, and your
-                            compliance obligations are engineered in from day one, not bolted on later.
+                            {{ __('landing.why.card_description') }}
                         </p>
                         <div class="mt-8 grid grid-cols-3 gap-4 border-t border-white/15 pt-8">
-                            <div><div class="font-display text-2xl font-black">100%</div><div class="text-xs text-white/70">EU hosting</div></div>
-                            <div><div class="font-display text-2xl font-black">24/7</div><div class="text-xs text-white/70">Monitoring</div></div>
-                            <div><div class="font-display text-2xl font-black">0</div><div class="text-xs text-white/70">Lock-in</div></div>
+                            @foreach (__('landing.why.card_stats') as $cardStat)
+                                <div><div class="font-display text-2xl font-black">{{ $cardStat['value'] }}</div><div class="text-xs text-white/70">{{ $cardStat['label'] }}</div></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
 
                 <div class="order-1 lg:order-2">
-                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">Why StackVera Core</span>
+                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">{{ __('landing.why.eyebrow') }}</span>
                     <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-[#112138] sm:text-5xl">
-                        Senior expertise without the agency overhead.
+                        {{ __('landing.why.heading') }}
                     </h2>
                     <div class="mt-8 space-y-6">
-                        @php
-                            $reasons = [
-                                ['Senior-only teams', 'You work directly with the engineers building your systems, no layers, no hand-offs.'],
-                                ['Vendor-neutral advice', 'We recommend what fits your context, not what fills a licence quota.'],
-                                ['Compliance-first', 'GDPR, ISO 27001 and EU sovereignty considered from the first line of architecture.'],
-                                ['Built to be owned', 'Clean, documented systems your own team can confidently maintain.'],
-                            ];
-                        @endphp
-                        @foreach ($reasons as [$title, $desc])
+                        @foreach (__('landing.why.reasons') as $reason)
                             <div class="flex gap-4">
                                 <div class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#6304ec]/10 text-[#6304ec]">
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.79 6.8-6.79a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-display text-lg font-bold text-[#112138]">{{ $title }}</h3>
-                                    <p class="mt-1 text-[#112138]/65">{{ $desc }}</p>
+                                    <h3 class="font-display text-lg font-bold text-[#112138]">{{ $reason['title'] }}</h3>
+                                    <p class="mt-1 text-[#112138]/65">{{ $reason['description'] }}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -336,13 +288,12 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid gap-14 rounded-[2.5rem] border border-zinc-200 bg-white p-8 shadow-2xl shadow-[#112138]/5 lg:grid-cols-2 lg:p-14">
                 <div>
-                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">Let's talk</span>
+                    <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">{{ __('landing.contact.eyebrow') }}</span>
                     <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-[#112138] sm:text-5xl">
-                        Tell us what you're building.
+                        {{ __('landing.contact.heading') }}
                     </h2>
                     <p class="mt-5 text-lg text-[#112138]/65">
-                        Share a few details and a senior consultant will get back to you within one
-                        business day. Prefer to talk first? Book a call or email us directly.
+                        {{ __('landing.contact.description') }}
                     </p>
 
                     <div class="mt-10 space-y-4">
@@ -351,7 +302,7 @@
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75 12 13.5l9.75-6.75M3.75 5.25h16.5a1.5 1.5 0 0 1 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5Z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/45">Email</div>
+                                <div class="text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/45">{{ __('landing.contact.email_label') }}</div>
                                 <div class="font-semibold text-[#112138]">hello@stackvera.io</div>
                             </div>
                         </a>
@@ -360,8 +311,8 @@
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 8.25h16.5M4.5 5.25h15a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75Z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/45">Book a call</div>
-                                <div class="font-semibold text-[#112138]">30-minute intro · free</div>
+                                <div class="text-xs font-semibold font-body uppercase tracking-wide text-[#112138]/45">{{ __('landing.contact.book_label') }}</div>
+                                <div class="font-semibold text-[#112138]">{{ __('landing.contact.book_value') }}</div>
                             </div>
                         </a>
                     </div>
@@ -382,44 +333,43 @@
                 <div class="max-w-sm">
                     <img src="/images/stackvera-logo.svg" alt="StackVera Core" class="h-9 w-auto">
                     <p class="mt-5 text-sm leading-relaxed text-[#112138]/55">
-                        European IT consultancy for cloud, AI, security and sovereign platforms.
-                        Engineering the core of your digital business.
+                        {{ __('landing.footer.tagline') }}
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-12 sm:grid-cols-3">
                     <div>
-                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">Services</h4>
+                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">{{ __('landing.footer.services_heading') }}</h4>
                         <ul class="mt-4 space-y-2.5 text-sm font-semibold text-[#112138]/70">
-                            <li><a href="#services" class="hover:text-[#6304ec]">Cloud &amp; DevOps</a></li>
-                            <li><a href="#services" class="hover:text-[#6304ec]">AI &amp; Data</a></li>
-                            <li><a href="#services" class="hover:text-[#6304ec]">Cybersecurity</a></li>
-                            <li><a href="#services" class="hover:text-[#6304ec]">EU Platforms</a></li>
+                            <li><a href="#services" class="hover:text-[#6304ec]">{{ __('landing.footer.service_cloud') }}</a></li>
+                            <li><a href="#services" class="hover:text-[#6304ec]">{{ __('landing.footer.service_ai') }}</a></li>
+                            <li><a href="#services" class="hover:text-[#6304ec]">{{ __('landing.footer.service_security') }}</a></li>
+                            <li><a href="#services" class="hover:text-[#6304ec]">{{ __('landing.footer.service_platforms') }}</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">Company</h4>
+                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">{{ __('landing.footer.company_heading') }}</h4>
                         <ul class="mt-4 space-y-2.5 text-sm font-semibold text-[#112138]/70">
-                            <li><a href="#approach" class="hover:text-[#6304ec]">Approach</a></li>
-                            <li><a href="#why" class="hover:text-[#6304ec]">Why us</a></li>
-                            <li><a href="#contact" class="hover:text-[#6304ec]">Contact</a></li>
+                            <li><a href="#approach" class="hover:text-[#6304ec]">{{ __('landing.nav.approach') }}</a></li>
+                            <li><a href="#why" class="hover:text-[#6304ec]">{{ __('landing.nav.why_us') }}</a></li>
+                            <li><a href="#contact" class="hover:text-[#6304ec]">{{ __('landing.nav.contact') }}</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">Contact</h4>
+                        <h4 class="text-xs font-bold font-body uppercase tracking-wider text-[#112138]/45">{{ __('landing.footer.contact_heading') }}</h4>
                         <ul class="mt-4 space-y-2.5 text-sm font-semibold text-[#112138]/70">
                             <li><a href="mailto:hello@stackvera.io" class="hover:text-[#6304ec]">hello@stackvera.io</a></li>
-                            <li><a href="https://calendar.app.google/vGVv6Sh6EPv8do3M8" target="_blank" rel="noopener" class="hover:text-[#6304ec]">Book a call</a></li>
+                            <li><a href="https://calendar.app.google/vGVv6Sh6EPv8do3M8" target="_blank" rel="noopener" class="hover:text-[#6304ec]">{{ __('landing.nav.book_call') }}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-zinc-200 pt-8 text-xs text-[#112138]/45 sm:flex-row sm:items-center">
-                <p>© {{ date('Y') }} StackVera Core GmbH. All rights reserved.</p>
+                <p>© {{ date('Y') }} {{ __('landing.footer.rights') }}</p>
                 <div class="flex gap-6">
-                    <a href="{{ route('legal.imprint') }}" class="hover:text-[#6304ec]">Imprint</a>
-                    <a href="{{ route('legal.privacy') }}" class="hover:text-[#6304ec]">Privacy Policy</a>
+                    <a href="{{ route('legal.imprint') }}" class="hover:text-[#6304ec]">{{ __('landing.footer.imprint') }}</a>
+                    <a href="{{ route('legal.privacy') }}" class="hover:text-[#6304ec]">{{ __('landing.footer.privacy') }}</a>
                 </div>
             </div>
         </div>
