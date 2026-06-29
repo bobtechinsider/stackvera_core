@@ -6,7 +6,11 @@
     <body class="min-h-screen bg-white dark:bg-zinc-800">
         <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
+                <flux:sidebar.brand href="{{ route('dashboard') }}" name="StackVera Core" wire:navigate>
+                    <x-slot name="logo">
+                        <img src="/images/stackvera-mark.svg" alt="StackVera Core" class="size-8" />
+                    </x-slot>
+                </flux:sidebar.brand>
                 <flux:sidebar.collapse class="lg:hidden" />
             </flux:sidebar.header>
 
