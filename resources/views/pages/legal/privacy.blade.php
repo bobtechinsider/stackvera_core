@@ -59,10 +59,7 @@
             <li>{{ __('legal.privacy.rights_portability') }}</li>
             <li>{{ __('legal.privacy.rights_object') }}</li>
         </ul>
-        <p>
-            {{ __('legal.privacy.rights_complaint') }}
-            Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.
-        </p>
+        <p>{{ __('legal.privacy.rights_complaint') }}</p>
     </section>
 
     <section>

@@ -65,7 +65,7 @@ return [
         'rights_restriction' => 'restriction of processing (Art. 18 GDPR);',
         'rights_portability' => 'data portability (Art. 20 GDPR);',
         'rights_object' => 'object to processing (Art. 21 GDPR).',
-        'rights_complaint' => 'You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR). The competent authority is',
+        'rights_complaint' => 'You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), in particular in the Member State of your habitual residence, place of work, or the place of the alleged infringement.',
 
         'dpo_heading' => '9. Contact for data protection enquiries',
         'dpo_body_before' => 'To exercise your rights or for any questions about data protection, contact us at',

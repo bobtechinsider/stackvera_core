@@ -65,7 +65,7 @@ return [
         'rights_restriction' => 'Einschränkung der Verarbeitung (Art. 18 DSGVO);',
         'rights_portability' => 'Datenübertragbarkeit (Art. 20 DSGVO);',
         'rights_object' => 'Widerspruch gegen die Verarbeitung (Art. 21 DSGVO).',
-        'rights_complaint' => 'Außerdem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Die zuständige Behörde ist',
+        'rights_complaint' => 'Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.',
 
         'dpo_heading' => '9. Kontakt für Datenschutzanfragen',
         'dpo_body_before' => 'Um Ihre Rechte auszuüben oder bei Fragen zum Datenschutz erreichen Sie uns unter',
