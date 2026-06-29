@@ -11,6 +11,7 @@ return [
         'meta_description' => 'Impressum und rechtliche Informationen der StackVera Core GmbH.',
         'intro' => 'Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).',
         'company_heading' => 'Unternehmensangaben',
+        'country' => 'Deutschland',
         'represented_heading' => 'Vertreten durch',
         'managing_director' => 'Geschäftsführer:',
         'contact_heading' => 'Kontakt',
@@ -31,6 +32,7 @@ return [
         'title' => 'Datenschutzerklärung',
         'meta_description' => 'Wie die StackVera Core GmbH Ihre personenbezogenen Daten erhebt, nutzt und schützt.',
         'last_updated' => 'Zuletzt aktualisiert:',
+        'last_updated_date' => '29. Juni 2026',
 
         'overview_heading' => '1. Überblick',
         'overview_body' => 'Wir nehmen den Schutz Ihrer personenbezogenen Daten ernst. Diese Datenschutzerklärung erläutert, welche Daten wir verarbeiten, wenn Sie unsere Website besuchen und uns kontaktieren, auf welcher Rechtsgrundlage dies geschieht und welche Rechte Ihnen nach der Datenschutz-Grundverordnung (DSGVO) zustehen.',

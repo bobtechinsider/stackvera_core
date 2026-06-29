@@ -11,6 +11,7 @@ return [
         'meta_description' => 'Imprint and legal information for StackVera Core GmbH.',
         'intro' => 'Information pursuant to § 5 DDG (German Digital Services Act).',
         'company_heading' => 'Company details',
+        'country' => 'Germany',
         'represented_heading' => 'Represented by',
         'managing_director' => 'Managing Director:',
         'contact_heading' => 'Contact',
@@ -31,6 +32,7 @@ return [
         'title' => 'Privacy Policy',
         'meta_description' => 'How StackVera Core GmbH collects, uses and protects your personal data.',
         'last_updated' => 'Last updated:',
+        'last_updated_date' => 'June 29, 2026',
 
         'overview_heading' => '1. Overview',
         'overview_body' => 'We take the protection of your personal data seriously. This privacy policy explains what data we process when you visit our website and contact us, on what legal basis, and which rights you have under the General Data Protection Regulation (GDPR).',

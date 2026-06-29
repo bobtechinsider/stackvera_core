@@ -8,23 +8,22 @@
         <h2>{{ __('legal.imprint.company_heading') }}</h2>
         <p>
             StackVera Core GmbH<br>
-            <span class="placeholder">[Street and house number]</span><br>
-            <span class="placeholder">[Postal code and city]</span><br>
-            <span class="placeholder">[Country]</span>
+            Westendstraße 193<br>
+            80686 München<br>
+            {{ __('legal.imprint.country') }}
         </p>
     </section>
 
     <section>
         <h2>{{ __('legal.imprint.represented_heading') }}</h2>
         <p>
-            {{ __('legal.imprint.managing_director') }} <span class="placeholder">[Name of managing director]</span>
+            {{ __('legal.imprint.managing_director') }} Bob Molitor
         </p>
     </section>
 
     <section>
         <h2>{{ __('legal.imprint.contact_heading') }}</h2>
         <p>
-            {{ __('legal.imprint.phone') }} <span class="placeholder">[Phone number]</span><br>
             {{ __('legal.imprint.email') }} <a href="mailto:hello@stackvera.io">hello@stackvera.io</a>
         </p>
     </section>
@@ -50,7 +49,7 @@
         <h2>{{ __('legal.imprint.responsible_heading') }}</h2>
         <p>
             {{ __('legal.imprint.responsible_intro') }}<br>
-            <span class="placeholder">[Name]</span>, <span class="placeholder">[{{ __('legal.imprint.responsible_address') }}]</span>
+            Bob Molitor, {{ __('legal.imprint.responsible_address') }}
         </p>
     </section>
 

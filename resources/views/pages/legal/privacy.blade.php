@@ -2,7 +2,7 @@
     :title="__('legal.privacy.title')"
     :description="__('legal.privacy.meta_description')"
 >
-    <p class="text-sm text-[#112138]/45">{{ __('legal.privacy.last_updated') }} <span class="placeholder">[Date]</span></p>
+    <p class="text-sm text-[#112138]/45">{{ __('legal.privacy.last_updated') }} {{ __('legal.privacy.last_updated_date') }}</p>
 
     <section>
         <h2>{{ __('legal.privacy.overview_heading') }}</h2>
@@ -14,8 +14,8 @@
         <p>{{ __('legal.privacy.controller_intro') }}</p>
         <p>
             StackVera Core GmbH<br>
-            <span class="placeholder">[Street and house number]</span><br>
-            <span class="placeholder">[Postal code and city]</span><br>
+            Westendstraße 193<br>
+            80686 München<br>
             {{ __('legal.imprint.email') }} <a href="mailto:hello@stackvera.io">hello@stackvera.io</a>
         </p>
     </section>
@@ -61,7 +61,7 @@
         </ul>
         <p>
             {{ __('legal.privacy.rights_complaint') }}
-            <span class="placeholder">[Name of the competent data protection authority]</span>.
+            Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.
         </p>
     </section>
 
