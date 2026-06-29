@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 return [
@@ -131,6 +132,11 @@ return [
     |
     */
 
-    'serializable_classes' => false,
+    'serializable_classes' => [
+        // SimpleStats stores its per-request tracking data as a Collection in the
+        // cache. Allow just this one class so the cache can rehydrate it, while
+        // every other class stays blocked against gadget chain attacks.
+        Collection::class,
+    ],
 
 ];
