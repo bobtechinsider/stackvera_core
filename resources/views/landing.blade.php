@@ -380,6 +380,10 @@
 
                     <form action="{{ route('contact.store') }}" method="POST" class="space-y-5">
                         @csrf
+                        <div class="absolute left-[-9999px]" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" value="">
+                        </div>
                         <div class="grid gap-5 sm:grid-cols-2">
                             <div>
                                 <label for="name" class="mb-1.5 block text-sm font-semibold text-[#112138]">Name</label>

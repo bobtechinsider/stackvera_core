@@ -4,10 +4,15 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('contact.store');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+
+    // TODO: restrict to an admin role/policy once roles are introduced.
+    Route::livewire('contact-enquiries', 'pages::contact-enquiries.index')->name('contactEnquiries.index');
 });
 
 require __DIR__.'/settings.php';
