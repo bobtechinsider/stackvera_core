@@ -3,6 +3,11 @@
 use App\Models\ContactEnquiry;
 use App\Notifications\NewContactEnquiry;
 use Illuminate\Support\Facades\Notification;
+use Livewire\Livewire;
+
+beforeEach(function () {
+    cache()->flush();
+});
 
 it('renders the landing page with brand content', function () {
     $this->get(route('home'))
@@ -15,14 +20,15 @@ it('renders the landing page with brand content', function () {
 it('stores a valid contact enquiry and notifies the recipient', function () {
     Notification::fake();
 
-    $this->post(route('contact.store'), [
-        'name' => 'Jane Doe',
-        'company' => 'Acme GmbH',
-        'email' => 'jane@acme.com',
-        'message' => 'We need help modernising our cloud platform.',
-    ])
-        ->assertRedirect(route('home').'#contact')
-        ->assertSessionHas('contact_success', true);
+    Livewire::test('pages::contact-form')
+        ->set('name', 'Jane Doe')
+        ->set('company', 'Acme GmbH')
+        ->set('email', 'jane@acme.com')
+        ->set('message', 'We need help modernising our cloud platform.')
+        ->call('submit')
+        ->assertHasNoErrors()
+        ->assertSet('submitted', true)
+        ->assertSet('name', '');
 
     $this->assertDatabaseHas('contact_enquiries', [
         'name' => 'Jane Doe',
@@ -37,11 +43,13 @@ it('stores a valid contact enquiry and notifies the recipient', function () {
 it('accepts a contact enquiry without a company', function () {
     Notification::fake();
 
-    $this->post(route('contact.store'), [
-        'name' => 'John Roe',
-        'email' => 'john@example.com',
-        'message' => 'Just a quick question about your services.',
-    ])->assertSessionHas('contact_success', true);
+    Livewire::test('pages::contact-form')
+        ->set('name', 'John Roe')
+        ->set('email', 'john@example.com')
+        ->set('message', 'Just a quick question about your services.')
+        ->call('submit')
+        ->assertHasNoErrors()
+        ->assertSet('submitted', true);
 
     $this->assertDatabaseHas('contact_enquiries', [
         'email' => 'john@example.com',
@@ -50,21 +58,24 @@ it('accepts a contact enquiry without a company', function () {
 });
 
 it('rejects an invalid contact enquiry', function () {
-    $this->post(route('contact.store'), [
-        'name' => '',
-        'email' => 'not-an-email',
-        'message' => '',
-    ])->assertSessionHasErrors(['name', 'email', 'message']);
+    Livewire::test('pages::contact-form')
+        ->set('name', '')
+        ->set('email', 'not-an-email')
+        ->set('message', '')
+        ->call('submit')
+        ->assertHasErrors(['name', 'email', 'message'])
+        ->assertSet('submitted', false);
 
     expect(ContactEnquiry::count())->toBe(0);
 });
 
 it('rejects an email with a non-existent domain', function () {
-    $this->post(route('contact.store'), [
-        'name' => 'Jane Doe',
-        'email' => 'sadsa@sad',
-        'message' => 'Looks like a real message.',
-    ])->assertSessionHasErrors('email');
+    Livewire::test('pages::contact-form')
+        ->set('name', 'Jane Doe')
+        ->set('email', 'sadsa@sad')
+        ->set('message', 'Looks like a real message.')
+        ->call('submit')
+        ->assertHasErrors('email');
 
     expect(ContactEnquiry::count())->toBe(0);
 });
@@ -72,13 +83,39 @@ it('rejects an email with a non-existent domain', function () {
 it('silently drops a submission that fills the honeypot', function () {
     Notification::fake();
 
-    $this->post(route('contact.store'), [
-        'name' => 'Spam Bot',
-        'email' => 'spam@bot.com',
-        'message' => 'Buy cheap things now.',
-        'website' => 'http://spam.example.com',
-    ])->assertSessionHas('contact_success', true);
+    Livewire::test('pages::contact-form')
+        ->set('name', 'Spam Bot')
+        ->set('email', 'spam@bot.com')
+        ->set('message', 'Buy cheap things now.')
+        ->set('website', 'http://spam.example.com')
+        ->call('submit')
+        ->assertHasNoErrors()
+        ->assertSet('submitted', true);
 
     expect(ContactEnquiry::count())->toBe(0);
     Notification::assertNothingSent();
+});
+
+it('rate limits repeated submissions from the same client', function () {
+    Notification::fake();
+
+    $component = Livewire::test('pages::contact-form');
+
+    foreach (range(1, 5) as $attempt) {
+        $component
+            ->set('name', "Sender {$attempt}")
+            ->set('email', "sender{$attempt}@example.com")
+            ->set('message', 'A genuine enquiry message.')
+            ->call('submit')
+            ->assertHasNoErrors();
+    }
+
+    $component
+        ->set('name', 'Sender 6')
+        ->set('email', 'sender6@example.com')
+        ->set('message', 'One too many.')
+        ->call('submit')
+        ->assertHasErrors('email');
+
+    expect(ContactEnquiry::count())->toBe(5);
 });

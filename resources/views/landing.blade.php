@@ -17,8 +17,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white font-sans text-[#112138] antialiased selection:bg-[#6304ec] selection:text-white">
@@ -371,55 +369,7 @@
 
                 {{-- Form --}}
                 <div>
-                    @if (session('contact_success'))
-                        <div class="mb-6 flex items-start gap-3 rounded-2xl border border-[#00dffe]/40 bg-[#00dffe]/10 p-4 text-sm font-semibold text-[#112138]">
-                            <svg class="mt-0.5 h-5 w-5 shrink-0 text-[#00b8d4]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.59 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg>
-                            Thanks, your message is on its way. We'll be in touch within one business day.
-                        </div>
-                    @endif
-
-                    <form action="{{ route('contact.store') }}" method="POST" class="space-y-5">
-                        @csrf
-                        <div class="absolute left-[-9999px]" aria-hidden="true">
-                            <label for="website">Website</label>
-                            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" value="">
-                        </div>
-                        <div class="grid gap-5 sm:grid-cols-2">
-                            <div>
-                                <label for="name" class="mb-1.5 block text-sm font-semibold text-[#112138]">Name</label>
-                                <input id="name" name="name" type="text" required value="{{ old('name') }}"
-                                       class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
-                                       placeholder="Jane Doe">
-                                @error('name') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
-                            </div>
-                            <div>
-                                <label for="company" class="mb-1.5 block text-sm font-semibold text-[#112138]">Company</label>
-                                <input id="company" name="company" type="text" value="{{ old('company') }}"
-                                       class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
-                                       placeholder="Acme GmbH">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="mb-1.5 block text-sm font-semibold text-[#112138]">Work email</label>
-                            <input id="email" name="email" type="email" required value="{{ old('email') }}"
-                                   class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
-                                   placeholder="jane@company.com">
-                            @error('email') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
-                        </div>
-                        <div>
-                            <label for="message" class="mb-1.5 block text-sm font-semibold text-[#112138]">How can we help?</label>
-                            <textarea id="message" name="message" rows="4" required
-                                      class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-[#112138] outline-none transition focus:border-[#6304ec] focus:ring-2 focus:ring-[#6304ec]/20"
-                                      placeholder="Tell us about your project, timeline and goals…">{{ old('message') }}</textarea>
-                            @error('message') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
-                        </div>
-                        <button type="submit"
-                                class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#6304ec] px-7 py-3.5 text-base font-bold text-white shadow-xl shadow-[#6304ec]/25 transition hover:-translate-y-0.5 hover:bg-[#5505c8]">
-                            Send message
-                            <svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                        <p class="text-xs text-[#112138]/45">By submitting, you agree to our processing of your data in line with GDPR. We never share your details.</p>
-                    </form>
+                    <livewire:pages::contact-form />
                 </div>
             </div>
         </div>
