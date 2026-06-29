@@ -13,7 +13,12 @@
     @if ($description)
         <meta name="description" content="{{ $description }}">
     @endif
-    <meta name="robots" content="noindex, follow">
+
+    @include('partials.seo-meta', [
+        'seoTitle' => $title.' - StackVera Core GmbH',
+        'seoDescription' => $description ?? __('landing.meta.description'),
+        'seoNoindex' => true,
+    ])
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">

@@ -1,0 +1,37 @@
+# StackVera Core GmbH
+
+> StackVera Core GmbH is a European IT consultancy that helps ambitious organisations modernise their technology stack. The firm delivers cloud & DevOps, AI & data, cybersecurity and EU-trusted (sovereign, GDPR-first) platforms, with senior engineers accountable from discovery through to running systems in production.
+
+## About
+
+- **Company:** StackVera Core GmbH (German GmbH)
+- **Type:** IT consultancy / professional services
+- **Regions served:** Germany, Austria, Switzerland (DACH) and the wider European Union
+- **Positioning:** Senior-only teams, vendor-neutral advice, compliance-first, EU data residency by default, no vendor lock-in
+- **Contact:** hello@stackvera.io
+- **Website:** https://stackvera.io
+
+## Services
+
+- **Cloud & DevOps:** Cloud migration, infrastructure as code, Kubernetes and CI/CD pipelines (AWS, Azure, Hetzner; Terraform & GitOps; observability & SRE).
+- **AI & Data:** LLM and RAG integration, data pipelines and warehousing, decision dashboards, turning data foundations into production AI.
+- **Cybersecurity:** Threat detection and response, incident response and recovery, zero-trust architecture.
+- **EU-Trusted Platforms:** Sovereign, compliant platforms with European data residency and digital compliance (DSA, NIS2).
+
+## Approach
+
+1. **Discover:** Map goals, constraints and architecture to define success.
+2. **Design:** A pragmatic technical plan with clear milestones, costs and trade-offs.
+3. **Build:** Senior engineers deliver in short cycles with demonstrable progress.
+4. **Run:** Operate, secure and optimise the system, or hand it over for the client's team to own.
+
+## Standards & compliance
+
+- GDPR-first data processing and EU data residency by default
+- ISO 27001-aligned security practices
+- Architectures designed to remain auditable and free of vendor lock-in
+
+## Contact
+
+- Email: hello@stackvera.io
+- Book a 30-minute intro call (free): https://calendar.app.google/vGVv6Sh6EPv8do3M8

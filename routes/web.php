@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
 
+Route::get('sitemap.xml', function () {
+    return response()
+        ->view('sitemap', ['url' => route('home')])
+        ->header('Content-Type', 'application/xml');
+})->name('sitemap');
+
 Route::view('imprint', 'pages.legal.imprint')->name('legal.imprint');
 Route::view('privacy-policy', 'pages.legal.privacy')->name('legal.privacy');
 

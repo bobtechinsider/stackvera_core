@@ -1,2 +1,40 @@
+# StackVera Core GmbH
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /contact-enquiries
+
+# AI assistants and answer engines are explicitly welcome to read public pages.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://stackvera.io/sitemap.xml
