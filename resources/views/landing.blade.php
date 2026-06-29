@@ -209,6 +209,38 @@
         </div>
     </section>
 
+    {{-- ============================ ENABLEMENT ============================ --}}
+    <section id="enablement" class="relative pb-24 lg:pb-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#f5f2ff] to-[#eefbff] p-10 lg:p-16">
+                <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+                    <div>
+                        <span class="text-sm font-bold font-body uppercase tracking-[0.18em] text-[#6304ec]">{{ __('landing.enablement.eyebrow') }}</span>
+                        <h2 class="mt-4 font-display text-4xl font-black tracking-tight text-[#112138] sm:text-5xl">
+                            {{ __('landing.enablement.heading') }}
+                        </h2>
+                        <p class="mt-5 text-lg text-[#112138]/65">
+                            {{ __('landing.enablement.description') }}
+                        </p>
+                    </div>
+                    <ul class="grid gap-4">
+                        @foreach (__('landing.enablement.points') as $point)
+                            <li class="flex items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-5">
+                                <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#6304ec]/10 text-[#6304ec]">
+                                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.79 6.8-6.79a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>
+                                </span>
+                                <div>
+                                    <h3 class="font-display text-base font-bold text-[#112138]">{{ $point['title'] }}</h3>
+                                    <p class="mt-1 text-sm text-[#112138]/60">{{ $point['description'] }}</p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- ============================ APPROACH ============================ --}}
     <section id="approach" class="bg-[#112138] py-24 text-white lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">

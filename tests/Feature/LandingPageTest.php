@@ -19,6 +19,20 @@ it('renders the landing page with brand content', function () {
         ->assertSee('/images/stackvera-logo.svg', false);
 });
 
+it('renders the enablement section in both locales', function () {
+    $this->get(route('home'))
+        ->assertOk()
+        ->assertSee(__('landing.enablement.heading', [], 'en'))
+        ->assertSee(__('landing.enablement.points.0.title', [], 'en'));
+
+    app()->setLocale('de');
+
+    $this->get(route('home'))
+        ->assertOk()
+        ->assertSee(__('landing.enablement.heading', [], 'de'))
+        ->assertSee(__('landing.enablement.points.0.title', [], 'de'));
+});
+
 it('stores a valid contact enquiry and notifies the recipient', function () {
     Notification::fake();
 

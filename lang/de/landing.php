@@ -65,6 +65,17 @@ return [
         ],
     ],
 
+    'enablement' => [
+        'eyebrow' => 'Enablement',
+        'heading' => 'Wir bauen nicht nur, wir befähigen.',
+        'description' => 'Damit Souveränität kein Versprechen bleibt, geben wir Ihr System samt Wissen weiter. In Workshops und Schulungen bringen wir Ihr Team auf das Niveau, das den eigenständigen Betrieb trägt.',
+        'points' => [
+            ['title' => 'Hands-on-Workshops', 'description' => 'Praxisnahe Sessions zu Cloud, KI und Security, zugeschnitten auf Ihren Stack und Ihre Ziele.'],
+            ['title' => 'Architektur- & Code-Reviews', 'description' => 'Gemeinsame Reviews mit Ihrem Team, die Wissen aufbauen statt nur Befunde abzuliefern.'],
+            ['title' => 'Onboarding zum Selbstbetrieb', 'description' => 'Strukturierte Übergabe und Dokumentation, damit Ihr Team Systeme eigenständig führt.'],
+        ],
+    ],
+
     'approach' => [
         'eyebrow' => 'Wie wir arbeiten',
         'heading' => 'Ein Liefermodell auf Basis von Klarheit und Verantwortung.',

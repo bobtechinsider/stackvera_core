@@ -65,6 +65,17 @@ return [
         ],
     ],
 
+    'enablement' => [
+        'eyebrow' => 'Enablement',
+        'heading' => 'We do not just build, we enable.',
+        'description' => 'So that sovereignty is more than a promise, we hand over your system together with the knowledge to run it. Through workshops and training, we bring your team to the level that independent operation requires.',
+        'points' => [
+            ['title' => 'Hands-on workshops', 'description' => 'Practical sessions on cloud, AI and security, tailored to your stack and your goals.'],
+            ['title' => 'Architecture & code reviews', 'description' => 'Joint reviews with your team that build knowledge rather than just deliver findings.'],
+            ['title' => 'Onboarding for self-operation', 'description' => 'Structured handover and documentation so your team runs systems on its own.'],
+        ],
+    ],
+
     'approach' => [
         'eyebrow' => 'How we work',
         'heading' => 'A delivery model built on clarity and ownership.',
