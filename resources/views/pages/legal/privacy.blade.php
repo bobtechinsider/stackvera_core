@@ -24,7 +24,7 @@
         <h2>{{ __('legal.privacy.access_heading') }}</h2>
         <p>{{ __('legal.privacy.access_body') }}</p>
         <p>
-            {{ __('legal.privacy.access_hosting') }} <span class="placeholder">[Name and address of hosting provider]</span>.
+            {{ __('legal.privacy.access_hosting') }} {{ __('legal.privacy.access_hosting_value') }}
         </p>
     </section>
 
