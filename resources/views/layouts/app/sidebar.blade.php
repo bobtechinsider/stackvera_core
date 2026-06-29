@@ -7,8 +7,8 @@
         <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.header>
                 <flux:sidebar.brand href="{{ route('dashboard') }}" name="StackVera Core" wire:navigate>
-                    <x-slot name="logo">
-                        <img src="/images/stackvera-mark.svg" alt="StackVera Core" class="size-8" />
+                    <x-slot name="logo" class="!h-8 !min-w-0 !overflow-visible">
+                        <img src="/images/stackvera-mark.svg" alt="StackVera Core" class="h-8 w-auto object-contain" />
                     </x-slot>
                 </flux:sidebar.brand>
                 <flux:sidebar.collapse class="lg:hidden" />
