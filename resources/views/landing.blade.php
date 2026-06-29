@@ -418,9 +418,8 @@
             <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-zinc-200 pt-8 text-xs text-[#112138]/45 sm:flex-row sm:items-center">
                 <p>© {{ date('Y') }} StackVera Core GmbH. All rights reserved.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-[#6304ec]">Impressum</a>
-                    <a href="#" class="hover:text-[#6304ec]">Datenschutz</a>
-                    <a href="#" class="hover:text-[#6304ec]">AGB</a>
+                    <a href="{{ route('legal.imprint') }}" class="hover:text-[#6304ec]">Imprint</a>
+                    <a href="{{ route('legal.privacy') }}" class="hover:text-[#6304ec]">Privacy Policy</a>
                 </div>
             </div>
         </div>
