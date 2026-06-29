@@ -1,31 +1,95 @@
-# Laravel + Livewire Starter Kit
+# StackVera Core
 
-## Introduction
+Marketing website and internal dashboard for StackVera Core GmbH, a European IT consultancy for cloud, AI, security and sovereign platforms.
 
-Our Laravel + [Livewire](https://livewire.laravel.com) starter kit provides a robust, modern starting point for building Laravel applications with a Livewire frontend.
+The application is built on a Laravel and [Livewire](https://livewire.laravel.com) stack with a [Flux UI](https://fluxui.dev) component library. It serves a public landing page with a contact form, plus an authenticated area for managing incoming enquiries.
 
-Livewire is a powerful way of building dynamic, reactive, frontend UIs using just PHP. It's a great fit for teams that primarily use Blade templates and are looking for a simpler alternative to JavaScript-driven SPA frameworks like React and Vue.
+## Tech Stack
 
-This Livewire starter kit utilizes Livewire 4, TypeScript, Tailwind, and the [Flux UI](https://fluxui.dev) component library.
+- PHP 8.5, Laravel 13
+- Livewire 4 with Flux UI (free edition)
+- Tailwind CSS 4, Vite
+- Laravel Fortify for authentication (login, registration, 2FA, passkeys)
+- Pest 4 for testing, Larastan for static analysis, Pint for formatting
 
-If you are looking for the alternate configurations of this starter kit, they can be found in the following branches:
+## Local Development
 
-- [workos](https://github.com/laravel/livewire-starter-kit/tree/workos) - if WorkOS is selected for authentication
+The site is served by [Laravel Herd](https://herd.laravel.com) at `https://stackvera_core.test`.
 
-## Official Documentation
+Install dependencies and build assets:
 
-Documentation for all Laravel starter kits can be found on the [Laravel website](https://laravel.com/docs/starter-kits).
+```bash
+composer install
+npm install
+npm run build
+```
 
-## Contributing
+Run the full development environment (server, Vite, queue, logs) with one command:
 
-Thank you for considering contributing to our starter kit! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer dev
+```
 
-All contributions to the Starter Kits from now on should be made through [Maestro](https://github.com/laravel/maestro).
+## Contact Enquiries
 
-## Code of Conduct
+The landing page contact form (`POST /contact`) captures enquiries and stores them in the `contact_enquiries` table.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+On a successful submission the application:
+
+1. Persists the enquiry (name, optional company, email, message).
+2. Sends a branded HTML email to the configured recipient as a queued notification.
+3. Redirects back to the contact section with a success message.
+
+### Spam protection
+
+The form is protected by a hidden honeypot field and a rate limiter (`throttle:5,1`). Submissions that fill the honeypot are silently dropped without being stored or mailed.
+
+### Email validation
+
+The email field requires a syntactically valid address with a real top level domain, so values such as `name@local` are rejected.
+
+### Notification recipient
+
+The recipient address is read from `config('services.contact.recipient')`. Set it in your environment:
+
+```dotenv
+CONTACT_RECIPIENT=team@stackvera.example
+```
+
+If `CONTACT_RECIPIENT` is not set, the application falls back to `MAIL_FROM_ADDRESS`.
+
+### Queue worker
+
+The notification implements `ShouldQueue` and runs on the `database` queue connection, so a worker must be running to deliver emails:
+
+```bash
+php artisan queue:work
+```
+
+During development you can use `php artisan queue:listen` instead, which reloads code on every job so you do not have to restart the worker after changes. The `composer dev` command already starts a worker for you.
+
+### Branded email template
+
+The notification uses a custom, email safe HTML template at `resources/views/mail/contact-enquiry.blade.php` (with a plain text counterpart) that matches the site branding (logo, brand colors and fonts). Timestamps are displayed in the `Europe/Berlin` timezone while still being stored in UTC.
+
+### Admin list
+
+Authenticated users can review enquiries at `/contact-enquiries`. The Livewire page lists submissions with a read or unread status and supports marking enquiries as read and deleting them. Access is currently limited to authenticated, verified users. A role or policy restriction is planned (see the TODO in `routes/web.php`).
+
+## Testing
+
+Run the test suite:
+
+```bash
+php artisan test
+```
+
+Run the full quality check (formatting, static analysis and tests), the same command used in CI:
+
+```bash
+composer test
+```
 
 ## License
 
-The Laravel + Livewire starter kit is open-sourced software licensed under the MIT license.
+This project is proprietary software owned by StackVera Core GmbH.
