@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\ContactEnquiry;
+use App\Notifications\ContactEnquiryConfirmation;
 use App\Notifications\NewContactEnquiry;
+use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Livewire;
 
@@ -38,6 +40,29 @@ it('stores a valid contact enquiry and notifies the recipient', function () {
     ]);
 
     Notification::assertSentOnDemand(NewContactEnquiry::class);
+
+    Notification::assertSentOnDemand(
+        ContactEnquiryConfirmation::class,
+        fn ($notification, $channels, AnonymousNotifiable $notifiable) => $notifiable->routes['mail'] === 'jane@acme.com',
+    );
+});
+
+it('sends the customer confirmation in the active locale', function () {
+    Notification::fake();
+
+    app()->setLocale('de');
+
+    Livewire::test('pages::contact-form')
+        ->set('name', 'Erika Mustermann')
+        ->set('email', 'erika@example.com')
+        ->set('message', 'Wir brauchen Unterstützung bei unserer Cloud.')
+        ->call('submit')
+        ->assertHasNoErrors();
+
+    Notification::assertSentOnDemand(
+        ContactEnquiryConfirmation::class,
+        fn (ContactEnquiryConfirmation $notification) => $notification->locale === 'de',
+    );
 });
 
 it('accepts a contact enquiry without a company', function () {

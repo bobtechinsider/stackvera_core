@@ -29,15 +29,23 @@
     </section>
 
     <section>
+        <h2>{{ __('legal.privacy.cookies_heading') }}</h2>
+        <p>{{ __('legal.privacy.cookies_body') }}</p>
+    </section>
+
+    <section>
+        <h2>{{ __('legal.privacy.fonts_heading') }}</h2>
+        <p>{{ __('legal.privacy.fonts_body') }}</p>
+    </section>
+
+    <section>
         <h2>{{ __('legal.privacy.contact_form_heading') }}</h2>
         <p>{{ __('legal.privacy.contact_form_body') }}</p>
     </section>
 
     <section>
-        <h2>{{ __('legal.privacy.cookies_heading') }}</h2>
-        <p>
-            <span class="placeholder">[Describe any cookies, analytics or third-party tools you use, or state that none are used.]</span>
-        </p>
+        <h2>{{ __('legal.privacy.booking_heading') }}</h2>
+        <p>{{ __('legal.privacy.booking_body') }}</p>
     </section>
 
     <section>

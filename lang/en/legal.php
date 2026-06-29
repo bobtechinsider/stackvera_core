@@ -42,12 +42,19 @@ return [
         'access_body' => "When you access our website, the hosting provider's servers automatically collect and store information in server log files that your browser transmits. This includes the browser type, operating system, referrer URL, IP address and the time of the request. This data is processed on the basis of our legitimate interest in the secure and stable operation of the website (Art. 6 (1) (f) GDPR).",
         'access_hosting' => 'Hosting provider:',
 
-        'contact_form_heading' => '4. Contact form',
-        'contact_form_body' => 'When you submit our contact form, we process the name, company (optional), email address and message you provide in order to handle your enquiry. The legal basis is the performance of pre-contractual measures and our legitimate interest in responding to requests (Art. 6 (1) (b) and (f) GDPR). We retain enquiries for as long as necessary to process them and to comply with statutory retention obligations.',
+        'cookies_heading' => '4. Cookies',
+        'cookies_body' => 'Our website only uses technically necessary cookies that are required for it to function. These are a session cookie and a CSRF token cookie set by our framework to maintain your session and protect forms against cross-site request forgery, and a "locale" cookie that stores your preferred language. These cookies are processed on the basis of our legitimate interest in the secure operation of the website (Art. 6 (1) (f) GDPR) and do not require consent. We do not use tracking, advertising or analytics cookies.',
 
-        'cookies_heading' => '5. Cookies and analytics',
+        'fonts_heading' => '5. Web fonts',
+        'fonts_body' => 'To present our content consistently, this website loads web fonts from Google Fonts (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) and Fontshare (Indian Type Foundry). When a page is loaded, your browser establishes a connection to these providers\' servers, which transmits your IP address to them. This may involve a transfer to third countries such as the USA. The legal basis is our legitimate interest in a uniform and appealing presentation of our website (Art. 6 (1) (f) GDPR).',
 
-        'rights_heading' => '6. Your rights',
+        'contact_form_heading' => '6. Contact form',
+        'contact_form_body' => 'When you submit our contact form, we process the name, company (optional), email address and message you provide in order to handle your enquiry. We also send you a confirmation email to the address you provide. The legal basis is the performance of pre-contractual measures and our legitimate interest in responding to requests (Art. 6 (1) (b) and (f) GDPR). We retain enquiries for as long as necessary to process them and to comply with statutory retention obligations.',
+
+        'booking_heading' => '7. Appointment booking',
+        'booking_body' => 'We offer the option to book an appointment via a link to Google Calendar (Google Ireland Limited). When you click the link, you are forwarded to Google, and any data you enter there (such as your name, email address and chosen time) is processed by Google to arrange the appointment. This may involve a transfer to third countries such as the USA. The legal basis is the performance of pre-contractual measures and our legitimate interest in offering simple appointment scheduling (Art. 6 (1) (b) and (f) GDPR). Please refer to Google\'s privacy policy for details.',
+
+        'rights_heading' => '8. Your rights',
         'rights_intro' => 'Under the GDPR you have the right to:',
         'rights_access' => 'access your personal data (Art. 15 GDPR);',
         'rights_rectification' => 'rectification of inaccurate data (Art. 16 GDPR);',
@@ -57,7 +64,7 @@ return [
         'rights_object' => 'object to processing (Art. 21 GDPR).',
         'rights_complaint' => 'You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR). The competent authority is',
 
-        'dpo_heading' => '7. Contact for data protection enquiries',
+        'dpo_heading' => '9. Contact for data protection enquiries',
         'dpo_body_before' => 'To exercise your rights or for any questions about data protection, contact us at',
     ],
 ];
